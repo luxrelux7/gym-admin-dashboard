@@ -1,39 +1,120 @@
 Gym Membership System
 
-This is a local management tool built with Python and Streamlit. It was designed to help small gym owners handle their daily operations without needing complex software or expensive subscriptions.
-Key Features
+A simple web application built with Streamlit to manage gym members, track subscriptions, and monitor revenue.
 
-   * Member Registration: A simple interface to add new members and assign them to Gold, Silver, or Bronze plans.
+This project allows you to register members, assign membership plans, update plans, search for members, and remove members when needed. Data is stored locally using a JSON file.
 
-   * Live Dashboard: Real-time tracking of total active members and total revenue based on current plan assignments.
+Features
 
-   * Member Database: A searchable table that lists all registered members and their payment status.
+Register new gym members
 
-   * Plan Management: Admin tools to quickly upgrade or downgrade a member's plan or remove a member from the system entirely.
+Choose between Gold, Silver, and Bronze plans
 
-   * Local Data Storage: Uses a JSON-based system to ensure data persists even after the application is closed.
+Automatically calculate total revenue
 
-Technical Stack
+View total number of members
 
-   * Frontend: Streamlit
+Search for members by name
 
-   * Language: Python
+Upgrade or change a member’s plan
 
-   * Database: JSON (Local file storage)
+Remove members from the system
 
-Getting Started
+Persistent storage using a local JSON file
 
-    Prerequisites
-    You will need Python and the Streamlit library installed on your machine.
-    Bash
+Customizable Streamlit theme
 
-    pip install streamlit
+Tech Stack
 
-    Installation
-    Clone this repository or download the files to a local folder.
+Python
 
-    Running the App
-    Navigate to the project folder in your terminal and run:
-    Bash
+Streamlit
 
-    streamlit run app.py
+JSON (for local data storage)
+
+Project Structure
+gym-membership-system/
+│
+├── app.py
+├── gym_data.json (auto-created)
+└── .streamlit/
+    └── config.toml
+
+Installation
+
+Clone the repository or download the project folder.
+
+Install Streamlit if you haven’t already:
+
+pip install streamlit
+
+
+Navigate to the project directory:
+
+cd gym-membership-system
+
+
+Run the app:
+
+streamlit run app.py
+
+
+The app will open in your browser.
+
+Theme Configuration
+
+The app uses a custom Streamlit theme defined in:
+
+.streamlit/config.toml
+
+
+You can modify the colors inside that file to change the look and feel of the app.
+
+Example:
+
+[theme]
+primaryColor = "#39FF14"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#1C1F26"
+textColor = "#FAFAFA"
+font = "sans serif"
+
+
+After changing the theme, restart the app.
+
+Data Storage
+
+All member data is stored locally in:
+
+gym_data.json
+
+
+The file is automatically created when the first member is registered.
+
+Each member record includes:
+
+Name
+
+Plan
+
+Amount paid
+
+Join date
+
+Future Improvements
+
+Some possible enhancements:
+
+Use SQLite instead of JSON
+
+Add authentication (admin login)
+
+Add revenue charts and analytics
+
+Implement recurring monthly billing
+
+Deploy to Streamlit Cloud
+
+License
+
+This project is for educational and personal use.
